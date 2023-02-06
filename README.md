@@ -3,7 +3,10 @@
   <a href="https://github.com/FrenkyDema/valorant_change_audio_language/blob/main/LICENSE" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
   </a>
+  <img alt="Version" src="https://img.shields.io/badge/version-development-blue.svg?cacheSeconds=2592000" />
 </p>
+
+[![CodeQL](https://github.com/FrenkyDema/valorant_change_audio_language/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/FrenkyDema/valorant_change_audio_language/actions/workflows/github-code-scanning/codeql)
 
 > Application to allow you to set the game audio different from the text language
 
