@@ -41,16 +41,20 @@ if __name__ == "__main__":
         )
         print(language_tag)
 
-        rename_file_audio_name = "Audio-WindowsClient"
-        for file in search_file_from_string(path, rename_file_audio_name):
-            filename = os.path.basename(file)
-            os.rename(
-                file,
-                filename.replace(
-                    get_language_tag(filename, rename_file_audio_name),
-                    language_tag
-                )
-            )
+        # todo
+        # replace current correct language text file in valorant
+        # with renominate selected text file
+
+        # rename_file_audio_name = "Audio-WindowsClient"
+        # for file in search_file_from_string(path, rename_file_audio_name):
+        #     filename = os.path.basename(file)
+        #     os.rename(
+        #         file,
+        #         filename.replace(
+        #             get_language_tag(filename, rename_file_audio_name),
+        #             language_tag
+        #         )
+        #     )
 
         # for file in search_file_from_string(path, rename_file_audio_name):
         #     cmd = 'copy "' + file + '" "' +   val_packs_directory + '\\"'
