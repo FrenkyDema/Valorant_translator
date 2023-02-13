@@ -31,6 +31,7 @@ def print_import(string):
 import_parents(1)
 
 from src.lib import lib
+from src.lib import Valorant
 from src.gui import main_app
 
 if __name__ == "__main__":
@@ -39,8 +40,7 @@ if __name__ == "__main__":
     if not isdir(lib.resource_path("")):
         print("not exist")
         lib.create_app_files()
-
-    lib.default_config_values()
+        lib.default_config_values()
 
     app = main_app.App()
     app.start()
