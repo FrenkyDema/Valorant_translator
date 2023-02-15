@@ -88,13 +88,24 @@ class TranslatePage(CTkFrame):
             values=option_languages(),
             command=self.optionmenu_callback
         )
-        self.combobox.grid(pady=7, padx=7, row=0,
-                           column=2, sticky="w")
+        self.combobox.grid(pady=7, padx=7, row=0, column=2, sticky="w")
         self.combobox.set(get_language_from_tag(get_selected_language_tag()))
 
-        self.button = CTkButton(
-            self, text="Translate", command=button_event)
-        self.button.grid(
+        self.submit_button = CTkButton(
+            self,
+            height=40,
+            text="Translate",
+            compound="right",
+            image=CTkImage(
+                dark_image=Image.open(lib.get_image_path(
+                    "translate_text_icon.png")),
+                light_image=Image.open(lib.get_image_path(
+                    "translate_text_icon.png")),
+                size=(30, 30)
+            ),
+            fg_color=("gray65", "gray25"),  # <- custom tuple-color
+            command=submit_all)
+        self.submit_button.grid(
             row=3, column=0, padx=10, pady=10, sticky="se")
 
         self.set_default_values()
@@ -174,7 +185,7 @@ def option_languages() -> list[str]:
     return options
 
 
-def button_event():
+def submit_all():
 
     if project_directory_check() and Valorant.translate_valorant(
         get_selected_language_tag(),

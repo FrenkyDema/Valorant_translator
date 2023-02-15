@@ -1,3 +1,6 @@
+from src.gui import main_app
+from src.lib import Valorant
+from src.lib import lib
 import os
 import sys
 import types
@@ -30,9 +33,6 @@ def print_import(string):
 
 import_parents(1)
 
-from src.lib import lib
-from src.lib import Valorant
-from src.gui import main_app
 
 if __name__ == "__main__":
     from genericpath import isdir
