@@ -1,6 +1,3 @@
-from src.gui import main_app
-from src.lib import Valorant
-from src.lib import lib
 import os
 import sys
 import types
@@ -8,7 +5,6 @@ from pathlib import Path
 
 path, tail = os.path.split(__file__)
 os.chdir(path)
-
 
 def import_parents(level):
     file = Path(__file__).resolve()
@@ -33,6 +29,9 @@ def print_import(string):
 
 import_parents(1)
 
+from src.gui import main_app
+from src.lib import Valorant
+from src.lib import lib
 
 if __name__ == "__main__":
     from genericpath import isdir

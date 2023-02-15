@@ -56,6 +56,32 @@ class TranslatePage(CTkFrame):
 
         self.label_voice_language = CTkLabel(
             self.voice_language_frame,
+            text="Client avviato:",
+            width=150,
+            height=45)
+        self.label_voice_language.grid(
+            row=0, column=0, columnspan=2, padx=5, sticky="e")
+
+        self.client_check = CTkLabel(
+            self.voice_language_frame,
+            height=45,
+            width=45,
+            text="",
+        )
+        self.client_check.bind(sequence='<Button-1>',
+                               command=self.update_client_check)
+
+        self.client_check.grid(row=0, column=2, padx=5, sticky="w")
+
+        self.text_language_frame = CTkFrame(master=self)
+        self.text_language_frame.grid(
+            row=2, column=0, pady=10, padx=15)
+
+        self.text_language_frame.columnconfigure((0, 1, 2), weight=1)
+        self.text_language_frame.rowconfigure((0, 1), weight=1)
+
+        self.label_voice_language = CTkLabel(
+            self.text_language_frame,
             text="Voice language:",
             width=150,
             height=45)
@@ -63,17 +89,11 @@ class TranslatePage(CTkFrame):
             row=0, column=0, columnspan=2, padx=5, sticky="e")
 
         self.label_voice_language_value = CTkLabel(
-            self.voice_language_frame,
+            self.text_language_frame,
             width=150,
             height=45)
         self.label_voice_language_value.grid(
             row=0, column=2, padx=5, sticky="w")
-
-        self.text_language_frame = CTkFrame(master=self)
-        self.text_language_frame.grid(
-            row=2, column=0, pady=10, padx=15)
-
-        self.text_language_frame.columnconfigure((0, 1, 2), weight=1)
 
         self.label_text_language = CTkLabel(
             self.text_language_frame,
@@ -81,14 +101,14 @@ class TranslatePage(CTkFrame):
             width=150,
             height=45)
         self.label_text_language.grid(
-            row=0, column=0, columnspan=2, padx=5, sticky="e")
+            row=1, column=0, columnspan=2, padx=5, sticky="e")
 
         self.combobox = CTkOptionMenu(
             self.text_language_frame,
             values=option_languages(),
             command=self.optionmenu_callback
         )
-        self.combobox.grid(pady=7, padx=7, row=0, column=2, sticky="w")
+        self.combobox.grid(row=1, column=2, pady=7, padx=7, sticky="w")
         self.combobox.set(get_language_from_tag(get_selected_language_tag()))
 
         self.submit_button = CTkButton(
@@ -113,6 +133,7 @@ class TranslatePage(CTkFrame):
     def set_default_values(self):
         self.update_voice_language()
         self.update_root_display()
+        self.update_client_check()
 
     def optionmenu_callback(self, choice):
         language_tag: dict[str: str] = lib.get_key_value_json(
@@ -133,6 +154,15 @@ class TranslatePage(CTkFrame):
             CONFIG_FILE, "valorant_directory", directory.replace("\\", "/"))
         self.update_root_display()
         self.update_voice_language()
+        self.update_client_check()
+
+    def update_client_check(self, event=None):
+
+        icon_path = "true_icon.png" if Valorant.process_exists(
+            Valorant.riot_client) else "false_icon.png"
+        img = Image.open(lib.get_image_path(icon_path))
+        photo = CTkImage(dark_image=img, light_image=img, size=(30, 30))
+        self.client_check.configure(image=photo)
 
     def update_root_display(self):
         self.root_display.configure(text=get_valorant_directory())
@@ -187,11 +217,14 @@ def option_languages() -> list[str]:
 
 def submit_all():
 
-    if project_directory_check() and Valorant.translate_valorant(
-        get_selected_language_tag(),
-        get_valorant_directory()
-    ):
-        messagebox.showinfo("Confirm", "Traduzione avvenuta con successo")
+    if project_directory_check():
+        translate = Valorant.translate_valorant(
+            get_selected_language_tag(),
+            get_valorant_directory()
+        )
+        print(translate)
+        if translate:
+            messagebox.showinfo("Confirm", "Traduzione avvenuta con successo")
 
 
 boold = True
