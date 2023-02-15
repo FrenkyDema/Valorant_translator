@@ -1,9 +1,7 @@
-import tkinter
 from genericpath import isdir
 from tkinter import filedialog, messagebox
 
 from PIL import Image
-from PIL.ImageTk import PhotoImage
 from customtkinter import *
 
 from ...lib import Valorant, lib
@@ -35,16 +33,19 @@ class TranslatePage(CTkFrame):
             self.directory_frame,
             height=45,
             width=45,
-            image=PhotoImage(
-                Image.open(
-                    lib.get_image_path(
-                        "add-folder_ico.png"
-                    )
-                ).resize((30, 30))
+            image=CTkImage(
+                light_image=Image.open(lib.get_image_path(
+                    "add-folder_ico.png"
+                )),
+                dark_image=Image.open(lib.get_image_path(
+                    "add-folder_ico.png"
+                )),
+                size=(30, 30)
             ),
             text="",
             fg_color=("gray65", "gray25"),  # <- custom tuple-color
-            command=self.chose_directory)
+            command=self.chose_directory
+        )
         self.chose_directory_button.grid(row=0, column=2, sticky="w")
 
         self.voice_language_frame = CTkFrame(master=self)
@@ -87,7 +88,8 @@ class TranslatePage(CTkFrame):
             values=option_languages(),
             command=self.optionmenu_callback
         )
-        self.combobox.grid(pady=7, padx=7, row=0, column=2, sticky="w")
+        self.combobox.grid(pady=7, padx=7, row=0,
+                           column=2, sticky="w")
         self.combobox.set(get_language_from_tag(get_selected_language_tag()))
 
         self.button = CTkButton(
@@ -122,11 +124,11 @@ class TranslatePage(CTkFrame):
         self.update_voice_language()
 
     def update_root_display(self):
-        self.root_display.set_text(get_valorant_directory())
+        self.root_display.configure(text=get_valorant_directory())
 
     def update_voice_language(self):
-        self.label_voice_language_value.set_text(
-            get_language_from_tag(Valorant.search_language(get_valorant_directory())))
+        self.label_voice_language_value.configure(text=get_language_from_tag(
+            Valorant.search_language(get_valorant_directory())))
         self.label_voice_language_value.grid(
             row=0, column=2, padx=5, sticky="w")
 

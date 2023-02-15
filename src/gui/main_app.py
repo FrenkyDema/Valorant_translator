@@ -1,7 +1,3 @@
-import tkinter
-
-from PIL import Image
-from PIL.ImageTk import PhotoImage
 from customtkinter import *
 
 from .pages import translate_page
@@ -35,8 +31,8 @@ class App(CTk):
 
         self.title_label = CTkLabel(master=self,
                                     text=lib.APP_NAME,
-                                    text_font=("Roboto Medium", -16),
-                                    )  # font name and size in px
+                                    font=("Roboto Medium", -16),
+                                    )
         self.title_label.grid(row=0, column=0, pady=5, padx=10)
 
         self.frame = translate_page.TranslatePage(self, self)
