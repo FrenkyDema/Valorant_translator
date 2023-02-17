@@ -1,0 +1,17 @@
+documentation:
+  - .github/*
+
+library:
+  - src/libs/*
+
+ui:
+  - src/gui/*
+
+pages:
+  - src/gui/pages/*
+
+workflows:
+  - .github/workflows/*
+
+resources:
+  - src/resources/*
