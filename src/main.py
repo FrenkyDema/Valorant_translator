@@ -30,8 +30,8 @@ def print_import(string):
 import_parents(1)
 
 from src.gui import main_app
-from src.lib import Valorant
-from src.lib import lib
+from src.libs import Valorant
+from src.libs import lib
 
 if __name__ == "__main__":
     from genericpath import isdir
