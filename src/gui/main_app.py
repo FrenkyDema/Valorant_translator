@@ -1,7 +1,7 @@
 from customtkinter import *
 
 from .pages import translate_page
-from ..lib import lib
+from ..libs import lib
 # Modes: "System" (standard), "Dark", "Light"
 set_appearance_mode("Dark")
 # Themes: "blue" (standard), "green", "dark-blue"
