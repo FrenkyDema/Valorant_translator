@@ -6,17 +6,16 @@
   </a>
 </p>
 
-> Test Application Update è un'applicazione desktop sviluppata in Python per mostrare come eseguire l'aggiornamento di un'applicazione desktop in modo automatico. L'applicazione controlla la disponibilità di nuove versioni su GitHub, scarica il file di aggiornamento e lo sostituisce con il vecchio file dell'applicazione. L'applicazione include una semplice interfaccia utente con un pulsante per avviare il processo di aggiornamento. L'applicazione è stata sviluppata utilizzando le librerie Python tkinter, requests, e aiohttp. L'applicazione è cross-platform e può essere eseguita su Windows, macOS e Linux.
+Benvenuto nell'applicazione di modifica della lingua di Valorant. Questa app ti permette di cambiare la lingua dei testi del gioco Valorant con una delle lingue supportate, semplicemente selezionando la lingua desiderata dal menu a tendina. Inoltre, l'app rileva automaticamente la lingua attualmente impostata nel gioco. Affinché l'app funzioni correttamente, sarà necessario selezionare la cartella di installazione di Valorant, e assicurarsi che il client Riot sia aperto durante l'utilizzo dell'app.
 
 ## Usage
 
-1. Per scaricare l'ultima versione dell'app direttamente dalle release di GitHub, segui questi passaggi:
-    - Vai alla pagina delle release di GitHub dell'applicazione.
-    - Trova la versione più recente dell'applicazione e cerca il file .exe.
-    - Fai clic sul link per scaricare il file .exe.
-2. Dopo aver scaricato il file .exe, segui questi passaggi per aprire l'applicazione:
-    - Trova il file .exe appena scaricato sul tuo computer.
-    - Fai doppio clic sul file per avviare l'applicazione.
+1. Scaricare il file .exe dell'applicazione dall'area "Releases" della repository GitHub del progetto.
+1. Fare doppio clic sul file .exe per avviare l'applicazione.
+1. Inserire il percorso della cartella di Valorant (dove sono presenti i file di lingua) nella finestra di configurazione dell'applicazione.
+1. Selezionare la lingua desiderata dall'elenco delle lingue supportate nella finestra principale dell'applicazione.
+1. Verificare che il client Riot di Valorant sia aperto. Se non lo è, aprire il client Riot per il corretto funzionamento dell'applicazione.
+1. Fare clic sul pulsante "Traduci" per modificare i file di testo di Valorant con la lingua selezionata.
 
 ## Author
 
