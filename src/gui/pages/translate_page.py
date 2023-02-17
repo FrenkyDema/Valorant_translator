@@ -4,8 +4,8 @@ from tkinter import filedialog, messagebox
 from PIL import Image
 from customtkinter import *
 
-from ...lib import Valorant, lib
-from ...lib.lib import CONFIG_FILE
+from ...libs import Valorant, lib
+from ...libs.lib import CONFIG_FILE
 
 
 class TranslatePage(CTkFrame):
@@ -226,25 +226,3 @@ def submit_all():
         if translate:
             messagebox.showinfo("Confirm", "Traduzione avvenuta con successo")
 
-
-boold = True
-if __name__ == "__main__":
-    if boold:
-        print("Start")
-
-    if not isdir(lib.resource_path("")):
-        print("not exist")
-        lib.create_app_files()
-
-    lib.default_config_values()
-
-    set_appearance_mode("dark")
-    set_default_color_theme("blue")
-
-    app = CTk()
-    app.geometry("400x240")
-
-    app.mainloop()
-
-    if boold:
-        print("End")
