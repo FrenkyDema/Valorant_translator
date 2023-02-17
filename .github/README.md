@@ -6,16 +6,16 @@
   </a>
 </p>
 
-Benvenuto nell'applicazione di modifica della lingua di Valorant. Questa app ti permette di cambiare la lingua dei testi del gioco Valorant con una delle lingue supportate, semplicemente selezionando la lingua desiderata dal menu a tendina. Inoltre, l'app rileva automaticamente la lingua attualmente impostata nel gioco. Affinché l'app funzioni correttamente, sarà necessario selezionare la cartella di installazione di Valorant, e assicurarsi che il client Riot sia aperto durante l'utilizzo dell'app.
+Welcome to the application of modification of the Valrant language. This app allows you to change the language of the Valrant game texts with one of the supported languages, simply by selecting the desired language from the drop -down menu. In addition, the app automatically detects the language currently set in the game. In order for the app to work correctly, it will be necessary to select the Valarant installation folder, and make sure that the Riot client is open while using the app.
 
 ## Usage
 
-1. Scaricare il file .exe dell'applicazione dall'area "Releases" della repository GitHub del progetto.
-1. Fare doppio clic sul file .exe per avviare l'applicazione.
-1. Inserire il percorso della cartella di Valorant (dove sono presenti i file di lingua) nella finestra di configurazione dell'applicazione.
-1. Selezionare la lingua desiderata dall'elenco delle lingue supportate nella finestra principale dell'applicazione.
-1. Verificare che il client Riot di Valorant sia aperto. Se non lo è, aprire il client Riot per il corretto funzionamento dell'applicazione.
-1. Fare clic sul pulsante "Traduci" per modificare i file di testo di Valorant con la lingua selezionata.
+1. Download the application's .exe file from the "Releases" section of the project's GitHub repository.
+1. Double-click the .exe file to launch the application.
+1. Enter the path to the Valorant folder (where the language files are located) in the application's configuration window.
+1. Select the desired language from the list of supported languages in the application's main window.
+1. Verify that the Valorant Riot client is open. If it is not, open the Riot client for the application to function properly.
+1. Click the "Translate" button to modify Valorant's text files with the selected language.
 
 ## Author
 
