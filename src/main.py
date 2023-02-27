@@ -1,10 +1,17 @@
+from src.libs import lib
+from src.libs import Valorant
+from src.gui import main_app
 import os
 import sys
 import types
 from pathlib import Path
 
+from tkinter import Variable, StringVar, IntVar, DoubleVar, BooleanVar
+from tkinter import filedialog, messagebox
+
 path, tail = os.path.split(__file__)
 os.chdir(path)
+
 
 def import_parents(level):
     file = Path(__file__).resolve()
@@ -29,9 +36,6 @@ def print_import(string):
 
 import_parents(1)
 
-from src.gui import main_app
-from src.libs import Valorant
-from src.libs import lib
 
 if __name__ == "__main__":
     from genericpath import isdir

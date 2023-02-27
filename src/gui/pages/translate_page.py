@@ -1,5 +1,5 @@
 from genericpath import isdir
-from tkinter import filedialog, messagebox
+from tkinter import messagebox
 
 from PIL import Image
 from customtkinter import *
