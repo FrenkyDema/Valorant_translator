@@ -1,10 +1,8 @@
-<h1 align="center">Welcome to Test_Application_Update 👋</h1>
-<p>
-  <img alt="Version" src="https://img.shields.io/badge/version-v0.0.3-blue.svg?cacheSeconds=2592000" />
-  <a href="https://github.com/FrenkyDema/Test_Application_Update/blob/main/LICENSE" target="_blank">
-    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
-  </a>
-</p>
+<h1 align="center">Welcome to valorant_change_audio_language 👋</h1>
+
+[![GitHub](https://img.shields.io/github/license/FrenkyDema/valorant_change_audio_language)](https://github.com/FrenkyDema/valorant_change_audio_language/blob/main/LICENSE)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/FrenkyDema/valorant_change_audio_language)](https://github.com/FrenkyDema/valorant_change_audio_language/releases/latest)
+[![CodeQL](https://github.com/FrenkyDema/valorant_change_audio_language/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/FrenkyDema/valorant_change_audio_language/actions/workflows/github-code-scanning/codeql)
 
 Welcome to the application of modification of the Valrant language. This app allows you to change the language of the Valrant game texts with one of the supported languages, simply by selecting the desired language from the drop -down menu. In addition, the app automatically detects the language currently set in the game. In order for the app to work correctly, it will be necessary to select the Valarant installation folder, and make sure that the Riot client is open while using the app.
 
