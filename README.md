@@ -1,12 +1,11 @@
 <h1 align="center">Welcome to valorant_change_audio_language 👋</h1>
-<p>
-  <a href="https://github.com/FrenkyDema/valorant_change_audio_language/blob/main/LICENSE" target="_blank">
-    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
-  </a>
-  <img alt="Version" src="https://img.shields.io/badge/version-development-blue.svg?cacheSeconds=2592000" />
-</p>
+
+[![GitHub](https://img.shields.io/github/license/FrenkyDema/valorant_change_audio_language)](https://github.com/FrenkyDema/valorant_change_audio_language/blob/main/LICENSE)
+
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/FrenkyDema/valorant_change_audio_language)](https://github.com/FrenkyDema/valorant_change_audio_language/releases/latest)
 
 [![CodeQL](https://github.com/FrenkyDema/valorant_change_audio_language/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/FrenkyDema/valorant_change_audio_language/actions/workflows/github-code-scanning/codeql)
+
 
 > Application to allow you to set the game audio different from the text language
 
