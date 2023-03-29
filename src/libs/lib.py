@@ -22,6 +22,8 @@ APP_NAME = "Valorant_translator"
 CONFIG_FILE = "config.json"
 
 # ================== Temp Files functions ==================
+
+
 def resource_temp_path(relative_path: str) -> str:
     """ Get absolute path to resource, works for dev and for PyInstaller """
     temp_path = getattr(sys, '_MEIPASS', os.path.dirname(os.getcwd()))
@@ -130,7 +132,6 @@ def get_image_path(image_name: str) -> str:
 
 def get_language_path(language_filename: str = "") -> str:
     return resource_temp_path(language_path + language_filename)
-
 
 
 boold = True
