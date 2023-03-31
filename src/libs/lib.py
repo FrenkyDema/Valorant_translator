@@ -18,7 +18,7 @@ image_path = 'src\\resources\\icons\\'
 language_path = 'src\\resources\\languages\\'
 
 APP_NAME = "Valorant_translator"
-
+VERSION = "v1.0.3"
 CONFIG_FILE = "config.json"
 
 # ================== Temp Files functions ==================
@@ -33,15 +33,17 @@ def resource_temp_path(relative_path: str) -> str:
 
 # ================== File functions ==================
 
-def resource_path(relative_path: str):
-    base_path = user_data_dir(appname=APP_NAME, appauthor=False)
+def resource_path(relative_path: str,):
+    base_path = user_data_dir(
+        appname=APP_NAME, appauthor=False, version=VERSION)
     print("Local - ", os.path.join(base_path, relative_path))
     return os.path.join(base_path, relative_path)
 
 
 def create_app_files():
     print("create app files")
-    copy_dir(resource_temp_path(file_path), resource_path(file_path))
+    copy_dir(resource_temp_path(file_path), resource_path(
+        file_path), resource_temp_path(image_path))
 
 
 def copy_dir(src: str, dst: str, ignore: str = ""):
@@ -60,6 +62,7 @@ def copy_dir(src: str, dst: str, ignore: str = ""):
 
 # ================== JSON functions ==================
 
+
 def open_json(file_name: str):
     try:
         f = open(resource_path(file_path + file_name), 'r+')
@@ -69,7 +72,6 @@ def open_json(file_name: str):
             json.dump({}, f, indent=4)
         return open_json(file_name)
     except Exception as e:
-        # TODO collect error
         logging.debug(e)
 
 
@@ -110,6 +112,10 @@ def get_dix_json(file_name: str):
 def default_config_values():
     print("default config values")
     dix = {
+        "version": VERSION,
+        "repo_owner": 'FrenkyDema',
+        "repo_name": APP_NAME,
+
         "supported_languages": {
             "Italian": "it_IT",
             "English": "en_US",
