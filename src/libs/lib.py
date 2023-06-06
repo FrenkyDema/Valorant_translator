@@ -11,6 +11,7 @@ import sys
 
 from appdirs import user_data_dir
 from ..debug import debug_print
+
 # CONSTANTS
 path_separation = "\\"
 file_path = 'src\\resources\\'
@@ -18,7 +19,7 @@ image_path = 'src\\resources\\icons\\'
 language_path = 'src\\resources\\languages\\'
 
 APP_NAME = "Valorant_translator"
-VERSION = "v1.0.3"
+VERSION = "v2.0.0"
 CONFIG_FILE = "config.json"
 
 # ================== Temp Files functions ==================
