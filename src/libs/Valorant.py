@@ -7,8 +7,8 @@ import os
 import glob
 from typing import Optional
 import subprocess
-# import lib
 from ..libs import lib
+from ..debug import debug_print
 
 riot_client = "RiotClientUx.exe"
 
@@ -38,7 +38,7 @@ def search_language(val_packs_directory: str) -> Optional[str]:
         )
         return language_tag
     except Exception as e:
-        print("NO file exist\n", e)
+        debug_print("NO file exist\n", e)
         return None
 
 
@@ -52,7 +52,7 @@ def get_renominated_text_filename(filename: str, language_tag: str) -> str:
 
 def translate_valorant(selected_language: str, val_packs_directory: str) -> bool:
     try:
-        print(selected_language)
+        debug_print(selected_language)
         current_language = search_language(val_packs_directory)
         for file in search_file_from_string(lib.get_language_path(), selected_language):
 
@@ -63,14 +63,13 @@ def translate_valorant(selected_language: str, val_packs_directory: str) -> bool
 
             cmd = 'copy "' + file + '" "' + val_packs_directory + \
                 '\\' + renominated_filename + '"'
-            print(cmd)
+            debug_print(cmd)
             os.system(cmd)
 
         return True
     except Exception as e:
-        print(e)
+        debug_print(e)
         return False
-
 
 
 def process_exists(process_name: str):
@@ -83,9 +82,10 @@ def process_exists(process_name: str):
 boold = False
 if __name__ == "__main__":
     if boold:
-        print("Start")
+        debug_print("Start")
 
-    print(translate_valorant("it_IT", "D:\\Riot Games\\VALORANT\\live\\ShooterGame\\Content\\Paks"))
+    debug_print(translate_valorant(
+        "it_IT", "D:\\Riot Games\\VALORANT\\live\\ShooterGame\\Content\\Paks"))
 
     if boold:
-        print("End")
+        debug_print("End")

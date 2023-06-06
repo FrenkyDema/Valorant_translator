@@ -4,6 +4,7 @@ from tkinter import messagebox
 from PIL import Image
 from customtkinter import *
 
+from ...debug import debug_print
 from ...libs import Valorant, lib
 from ...libs.lib import CONFIG_FILE
 
@@ -144,7 +145,7 @@ class TranslatePage(CTkFrame):
             language_tag.get(choice)
         )
 
-        print("Selected language:", choice)
+        debug_print("Selected language:", choice)
         self.combobox.configure(values=option_languages())
         self.combobox.grid(padx=20, pady=10)
 
@@ -222,7 +223,6 @@ def submit_all():
             get_selected_language_tag(),
             get_valorant_directory()
         )
-        print(translate)
+        debug_print(translate)
         if translate:
             messagebox.showinfo("Confirm", "Traduzione avvenuta con successo")
-
