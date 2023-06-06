@@ -13,7 +13,6 @@ from ...libs.lib import CONFIG_FILE
 
 import logging
 
-import logging
 
 async def update_async(latest_release):
     logger = logging.getLogger(__name__)
@@ -41,7 +40,6 @@ async def update_async(latest_release):
             os.remove(exe_path)
         shutil.move(exe_asset['name'], exe_path)
 
-
         # Rimuovere la vecchia cartella dell' applicazione
         shutil.rmtree(os.path.dirname(os.path.dirname(lib.resource_path(""))))
 
@@ -54,7 +52,6 @@ async def update_async(latest_release):
         error_message = "Nessun file exe trovato nella release più recente."
         logger.error(error_message)
         messagebox.showerror("Error", error_message)
-
 
 
 class UpdatePage(CTkFrame):

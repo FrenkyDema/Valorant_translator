@@ -65,7 +65,7 @@ class App(CTk):
                 page_type=main_app_enum.MainAppEnum.SETTINGS)
         )
         self.settings_button.grid(
-            row=1, column=0, sticky="e", padx=10, pady=10)
+            row=1, column=0, sticky="e", padx=10, pady=5)
 
         self.main_frame = translate_page.TranslatePage(self, self)
         self.main_frame.grid(row=2, column=0, sticky="nswe", padx=20, pady=20)
@@ -77,15 +77,47 @@ class App(CTk):
 
         self.main_frame.grid(row=2, column=0, sticky="nswe", padx=20, pady=20)
 
+    def change_settigs_button(self, isSettings: bool):
+        if isSettings:
+            self.settings_button.configure(image=CTkImage(
+                light_image=Image.open(
+                    lib.get_image_path("back_icon.png")
+                ),
+                dark_image=Image.open(
+                    lib.get_image_path("back_icon.png")
+                ),
+                size=(30, 30)
+            ),
+                command=lambda: self.chose_frame(
+                page_type=main_app_enum.MainAppEnum.TRANSLATE))
+        else:
+            self.settings_button.configure(
+                image=CTkImage(
+                    light_image=Image.open(
+                        lib.get_image_path("settings_icon.png")
+                    ),
+                    dark_image=Image.open(
+                        lib.get_image_path("settings_icon.png")
+                    ),
+                    size=(30, 30)
+                ),
+                command=lambda: self.chose_frame(
+                    page_type=main_app_enum.MainAppEnum.SETTINGS)
+            )
+        self.settings_button.grid(
+            row=1, column=0, sticky="e", padx=10, pady=5)
+
     def chose_frame(self, page_type):
         match page_type:
             case main_app_enum.MainAppEnum.TRANSLATE:
                 self.change_main_frame(
                     translate_page.TranslatePage(self, self))
+                self.change_settigs_button(False)
 
             case main_app_enum.MainAppEnum.SETTINGS:
                 self.change_main_frame(
                     update_page.UpdatePage(self, self, self.loop))
+                self.change_settigs_button(True)
 
             case _:
                 pass
