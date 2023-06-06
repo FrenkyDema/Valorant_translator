@@ -10,7 +10,7 @@ import shutil
 import sys
 
 from appdirs import user_data_dir
-
+from ..debug import debug_print
 # CONSTANTS
 path_separation = "\\"
 file_path = 'src\\resources\\'
@@ -27,7 +27,7 @@ CONFIG_FILE = "config.json"
 def resource_temp_path(relative_path: str) -> str:
     """ Get absolute path to resource, works for dev and for PyInstaller """
     temp_path = getattr(sys, '_MEIPASS', os.path.dirname(os.getcwd()))
-    print("Temp - ", os.path.join(temp_path, relative_path))
+    debug_print("Temp - ", os.path.join(temp_path, relative_path))
     return os.path.join(temp_path, relative_path)
 
 
@@ -36,12 +36,12 @@ def resource_temp_path(relative_path: str) -> str:
 def resource_path(relative_path: str,):
     base_path = user_data_dir(
         appname=APP_NAME, appauthor=False, version=VERSION)
-    print("Local - ", os.path.join(base_path, relative_path))
+    debug_print("Local - ", os.path.join(base_path, relative_path))
     return os.path.join(base_path, relative_path)
 
 
 def create_app_files():
-    print("create app files")
+    debug_print("create app files")
     copy_dir(resource_temp_path(file_path), resource_path(
         file_path), resource_temp_path(image_path))
 
@@ -110,7 +110,7 @@ def get_dix_json(file_name: str):
 # ========= config.json =========
 
 def default_config_values():
-    print("default config values")
+    debug_print("default config values")
     dix = {
         "version": VERSION,
         "repo_owner": 'FrenkyDema',
@@ -143,11 +143,11 @@ def get_language_path(language_filename: str = "") -> str:
 boold = True
 if __name__ == "__main__":
     if boold:
-        print("Start")
+        debug_print("Start")
 
     create_app_files()
 
     default_config_values()
 
     if boold:
-        print("End")
+        debug_print("End")

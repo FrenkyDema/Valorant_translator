@@ -6,6 +6,8 @@ from pathlib import Path
 from tkinter import Variable, StringVar, IntVar, DoubleVar, BooleanVar
 from tkinter import filedialog, messagebox
 
+from debug import debug_print
+
 path, tail = os.path.split(__file__)
 os.chdir(path)
 
@@ -24,11 +26,11 @@ def import_parents(level):
 
 
 def print_import(string):
-    print(string)
+    debug_print(string)
     for name, val in list(globals().items()):
         if isinstance(val, types.ModuleType):
             name = val.__name__
-            print("Main -", name)
+            debug_print("Main -", name)
 
 
 import_parents(1)
@@ -41,7 +43,7 @@ if __name__ == "__main__":
     from genericpath import isdir
 
     if not isdir(lib.resource_path("")):
-        print("not exist")
+        debug_print("not exist")
         lib.create_app_files()
         lib.default_config_values()
 

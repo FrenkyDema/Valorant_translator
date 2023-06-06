@@ -1,5 +1,5 @@
 import subprocess
-
+from ..debug import debug_print
 
 def process_exists(process_name: str):
     call = 'TASKLIST', '/FI', 'imagename eq %s' % process_name
@@ -11,4 +11,4 @@ def process_exists(process_name: str):
     return last_line.lower().startswith(process_name.lower())
 
 
-print(process_exists('RiotClientUx.exe'))
+debug_print(process_exists('RiotClientUx.exe'))

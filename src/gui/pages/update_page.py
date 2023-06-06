@@ -9,7 +9,7 @@ import os
 
 from ...libs import lib
 from ...libs.lib import CONFIG_FILE
-
+from ...debug import debug_print
 
 import logging
 
@@ -110,11 +110,11 @@ class UpdatePage(CTkFrame):
         webbrowser.open_new_tab(url)
 
     def check_for_updates_thread(self):
-        print("check_for_updates_thread")
+        debug_print("check_for_updates_thread")
         self.loop.run_until_complete(self.check_for_updates())
 
     def update_app_thread(self, latest_release):
-        print("update_app_thread")
+        debug_print("update_app_thread")
         self.loop.run_until_complete(update_async(latest_release))
 
     async def check_for_updates(self):
@@ -123,7 +123,7 @@ class UpdatePage(CTkFrame):
         # Disabilita il bottone di aggiornamento e mostra l'icona animata
         self.update_button_state("loading")
 
-        print("check_for_updates")
+        debug_print("check_for_updates")
 
         # Recupera la versione più recente dalla repository su GitHub
         async with aiohttp.ClientSession() as session:
@@ -133,7 +133,7 @@ class UpdatePage(CTkFrame):
                 if response.status == 200:
                     latest_release = await response.json()
                     latest_version = latest_release['tag_name']
-                    print(latest_version)
+                    debug_print(latest_version)
                     if latest_version != current_version:
                         self.update_button = CTkButton(
                             self,
